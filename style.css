@@ -1,3 +1,21 @@
+:root {
+    color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        background-color: #f5f5f2;
+        color: #0d1b2a;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        background-color: #0d1b2a;
+        color: #f5f5f2;
+    }
+}
+
 body {
     max-width: 80ch;
     margin-inline: auto;
