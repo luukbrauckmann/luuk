@@ -1,5 +1,24 @@
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("/fonts/Inter/Inter-light.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Dash";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/Dash/DashCasualL-Light.woff2") format("woff2");
+}
+
 :root {
     color-scheme: light dark;
+    font-family: "Inter", system-ui, sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
 }
 
 @media (prefers-color-scheme: light) {
@@ -19,4 +38,15 @@
 body {
     max-width: 80ch;
     margin-inline: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Dash", system-ui, sans-serif;
+    font-weight: 300;
+    line-height: 1.2;
 }
