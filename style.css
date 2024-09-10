@@ -3,6 +3,7 @@
     font-style: normal;
     font-weight: 300;
     src: url("/fonts/Inter.woff2") format("woff2");
+    font-display: fallback;
 }
 
 @font-face {
@@ -10,6 +11,7 @@
     font-style: normal;
     font-weight: 300;
     src: url("/fonts/Dash.woff2") format("woff2");
+    font-display: fallback;
 }
 
 :root {
