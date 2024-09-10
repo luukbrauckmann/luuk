@@ -2,7 +2,7 @@
     font-family: "Inter";
     font-style: normal;
     font-weight: 300;
-    src: url("/fonts/Inter.woff2") format("woff2");
+    src: url("./fonts/Inter.woff2") format("woff2");
     font-display: fallback;
 }
 
@@ -10,12 +10,13 @@
     font-family: "Dash";
     font-style: normal;
     font-weight: 300;
-    src: url("/fonts/Dash.woff2") format("woff2");
+    src: url("./fonts/Dash.woff2") format("woff2");
     font-display: fallback;
 }
 
 :root {
     --max-width: 75ch;
+    --transition-duration: 0.15s;
 
     color-scheme: light dark;
     font-family: "Inter", system-ui, sans-serif;
@@ -37,6 +38,7 @@
         --color-background-0: #f5f5f2;
         --color-background-1: #acb7c3;
         --color-text: #0d1b2a;
+        --color-text-inverse: #f5f5f2;
     }
 }
 
@@ -45,6 +47,7 @@
         --color-background-0: #f5f5f2;
         --color-background-1: #acb7c3;
         --color-text: #0d1b2a;
+        --color-text-inverse: #f5f5f2;
     }
 }
 
@@ -53,6 +56,7 @@
         --color-background-0: #0d1b2a;
         --color-background-1: #415a77;
         --color-text: #f5f5f2;
+        --color-text-inverse: #0d1b2a;
     }
 }
 
@@ -83,16 +87,24 @@ h6 {
     line-height: 1.2;
 }
 
-header {
-    padding-block: 1rem;
-}
-
 footer {
     background-color: var(--color-background-1);
     grid-column: full;
     display: grid;
     grid-template-columns: subgrid;
     padding-block-start: 1rem;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    height: 2.5rem;
+    width: min-content;
+    padding-block: 1rem;
 }
 
 .social-links {
@@ -110,6 +122,12 @@ footer {
     color: var(--color-text);
     text-decoration: none;
     line-height: 0;
+    transition: var(--transition-duration);
+}
+
+.social-links__item:hover {
+    color: var(--color-text-inverse);
+    background-color: var(--color-text);
 }
 
 .social-links__item > svg {
