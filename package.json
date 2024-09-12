@@ -1,0 +1,24 @@
+{
+	"private": true,
+	"type": "module",
+	"name": "personal-website",
+	"version": "1.0.0",
+	"description": "My personal website showcasing my portfolio, blog, and contact information.",
+	"keywords": [
+		"personal-website",
+		"portfolio",
+		"developer"
+	],
+	"author": "Luuk Brauckmann",
+	"license": "MIT",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview",
+		"format": "prettier --write ."
+	},
+	"devDependencies": {
+		"prettier": "^3.3.3",
+		"vite": "^5.4.4"
+	}
+}
