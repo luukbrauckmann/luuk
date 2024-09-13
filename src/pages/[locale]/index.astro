@@ -1,0 +1,12 @@
+---
+import { site } from '@data';
+import { Base } from '@layouts';
+
+export const getStaticPaths = (() => site.locales.map((locale) => ({ params: { locale } })));
+
+const { locale } = Astro.params;
+---
+
+<Base>
+    <h1>Hej { locale }</h1>
+</Base>
