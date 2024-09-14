@@ -1,21 +1,23 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "compilerOptions": {
-    "plugins": [
-      {
-        "name": "@astrojs/ts-plugin"
-      },
-    ],
-    "baseUrl": ".",
-    "paths": {
-      "@components": ["./src/components"],
-      "@components/*": ["./src/components/*"],
-      "@data": ["./src/data"],
-      "@data/*": ["./src/data/*"],
-      "@layouts": ["./src/layouts"],
-      "@layouts/*": ["./src/layouts/*"],
-      "@styles": ["./src/styles"],
-      "@styles/*": ["./src/styles/*"]
-    }
-  }
+	"extends": "astro/tsconfigs/strict",
+	"compilerOptions": {
+		"plugins": [
+			{
+				"name": "@astrojs/ts-plugin"
+			}
+		],
+		"baseUrl": ".",
+		"paths": {
+			"@components": ["./src/components"],
+			"@components/*": ["./src/components/*"],
+			"@data": ["./src/data"],
+			"@data/*": ["./src/data/*"],
+			"@layouts": ["./src/layouts"],
+			"@layouts/*": ["./src/layouts/*"],
+			"@styles": ["./src/styles"],
+			"@styles/*": ["./src/styles/*"],
+			"@types": ["./src/types"],
+			"@types/*": ["./src/types/*"]
+		}
+	}
 }

@@ -1,16 +1,64 @@
 ---
-import "@styles";
+import '@styles';
+import { LocaleSelector, ThemeSelector } from '@components';
+import type { Locale } from '@types';
+
+interface Props {
+	locale: Locale;
+}
+
+const { locale } = Astro.props;
 ---
 
-<html lang="en">
+<html lang={locale}>
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/favicon.svg"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width"
+		/>
+		<meta
+			name="generator"
+			content={Astro.generator}
+		/>
+
+		<title>Welcome • Luuk Brauckmann</title>
+
+		<link
+			rel="preload"
+			href="/fonts/Dash.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="preload"
+			href="/fonts/Inter.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin="anonymous"
+		/>
 	</head>
 	<body>
-		<slot />
+		<header>
+			<ThemeSelector />
+			<LocaleSelector />
+		</header>
+		<main>
+			<slot />
+		</main>
 	</body>
 </html>
+
+<style>
+	header {
+		display: flex;
+		justify-content: end;
+		gap: 1.5rem;
+	}
+</style>

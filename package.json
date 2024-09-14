@@ -1,19 +1,25 @@
 {
-  "name": "",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/check": "^0.9.3",
-    "@astrojs/ts-plugin": "^1.10.2",
-    "astro": "^4.15.4",
-    "sass": "^1.78.0",
-    "typescript": "^5.6.2"
-  }
+	"name": "",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro check && astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/check": "^0.9.3",
+		"accept-language-parser": "^1.5.0",
+		"astro": "^4.15.4",
+		"sass": "^1.78.0",
+		"typescript": "^5.6.2"
+	},
+	"devDependencies": {
+		"@astrojs/ts-plugin": "^1.10.2",
+		"@types/accept-language-parser": "^1.5.6",
+		"prettier": "^3.3.3",
+		"prettier-plugin-astro": "^0.14.1"
+	}
 }
