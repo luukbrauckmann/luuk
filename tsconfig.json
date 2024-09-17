@@ -18,6 +18,7 @@
 			"@styles/*": ["./src/styles/*"],
 			"@types": ["./src/types"],
 			"@types/*": ["./src/types/*"]
-		}
+		},
+		"checkJs": true
 	}
 }

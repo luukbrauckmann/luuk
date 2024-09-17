@@ -1,7 +1,7 @@
 /**
  * @type {import("prettier").Config}
  */
-const config = {
+export default {
 	printWidth: 100,
 	useTabs: true,
 	singleQuote: true,
@@ -10,7 +10,7 @@ const config = {
 	bracketSameLine: false,
 	vueIndentScriptAndStyle: true,
 	singleAttributePerLine: true,
-	plugins: ['prettier-plugin-astro'],
+	plugins: ['prettier-plugin-astro', 'prettier-plugin-css-order'],
 	overrides: [
 		{
 			files: '*.astro',
@@ -20,5 +20,3 @@ const config = {
 		}
 	]
 };
-
-export default config;
