@@ -1,0 +1,46 @@
+:root:has([value='system']:checked) {
+	color-scheme: light dark;
+}
+
+:root:has([value='light']:checked) {
+	--color-background-0: #f5f5f2;
+	--color-background-1: #e0e1dd;
+	--color-background-2: #acb7c3;
+	--color-text: #0d1b2a;
+	--color-text-inverse: #f5f5f2;
+	color-scheme: light;
+}
+
+:root:has([value='dark']:checked) {
+	--color-background-0: #0d1b2a;
+	--color-background-1: #1b263b;
+	--color-background-2: #415a77;
+	--color-text: #f5f5f2;
+	--color-text-inverse: #0d1b2a;
+	color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--color-background-0: #f5f5f2;
+		--color-background-1: #e0e1dd;
+		--color-background-2: #acb7c3;
+		--color-text: #0d1b2a;
+		--color-text-inverse: #f5f5f2;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-background-0: #0d1b2a;
+		--color-background-1: #1b263b;
+		--color-background-2: #415a77;
+		--color-text: #f5f5f2;
+		--color-text-inverse: #0d1b2a;
+	}
+}
+
+:root {
+	background-color: var(--color-background-0);
+	color: var(--color-text);
+}

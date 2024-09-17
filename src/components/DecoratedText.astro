@@ -1,0 +1,20 @@
+---
+const x = Math.random() * (0.3 - 0.1) + 0.1;
+const y = Math.random() * (0.3 - 0.1) + 0.1;
+---
+
+<div>
+	<slot />
+</div>
+
+<style lang="scss" define:vars={{ 'offset-x': `${x}em`, 'offset-y': `${y}em` }}>
+	div > :global(*) {
+		display: inline-block;
+		box-decoration-break: clone;
+		-webkit-box-decoration-break: clone;
+		background-image: linear-gradient(var(--color-background-2), var(--color-background-2));
+		background-position: calc(var(--offset-x) * -1) var(--offset-y);
+		background-repeat: no-repeat;
+		padding-left: calc(var(--offset-x) * 2);
+	}
+</style>

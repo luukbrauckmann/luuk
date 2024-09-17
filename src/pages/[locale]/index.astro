@@ -1,0 +1,46 @@
+---
+import { DecoratedText } from '@components';
+import { site } from '@data';
+import { Base } from '@layouts';
+import type { Locale } from '@types';
+
+export const getStaticPaths = () => site.locales.map((locale) => ({ params: { locale } }));
+
+const { locale } = Astro.params as { locale: Locale };
+---
+
+<Base {locale}>
+	<header>
+		<DecoratedText>
+			<h1>Hello I'm Luuk</h1>
+		</DecoratedText>
+		<p>I create user-friendly and inclusive web experiences.</p>
+	</header>
+
+	<section>
+		<DecoratedText>
+			<h2>Me, myself & I</h2>
+		</DecoratedText>
+		<p>
+			I am an enthusiastic Front-end Developer based in the Netherlands with a passion for creating
+			user-friendly and inclusive web experiences.
+		</p>
+		<p>
+			After completing the Application Development program at the ROC of Amsterdam, I started the
+			Business IT & Management program at Windesheim while working part-time as a full-stack
+			developer. During this time, I found myself increasingly drawn to front-end development.
+			Realizing this was where my true passion lay, I decided to leave my program at Windesheim and
+			search for something more aligned with my interests.
+		</p>
+		<p>
+			That’s when I discovered the Front-end Design & Development program at the Amsterdam
+			University of Applied Sciences. I applied, and everything clicked. I found myself enjoying
+			school like never before and eventually graduated cum laude. Just before my final assessment,
+			I received the exciting news that my internship would turn into a job offer.
+		</p>
+		<p>
+			I gladly accepted, and now, I work full-time as a Front-end Developer at the Voorhoede in
+			Amsterdam, doing what I love every day.
+		</p>
+	</section>
+</Base>

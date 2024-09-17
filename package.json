@@ -1,24 +1,27 @@
 {
-	"private": true,
+	"name": "luuk",
 	"type": "module",
-	"name": "personal-website",
-	"version": "1.0.0",
-	"description": "My personal website showcasing my portfolio, blog, and contact information.",
-	"keywords": [
-		"personal-website",
-		"portfolio",
-		"developer"
-	],
-	"author": "Luuk Brauckmann",
-	"license": "MIT",
+	"version": "0.0.1",
 	"scripts": {
-		"dev": "vite",
-		"build": "vite build",
-		"preview": "vite preview",
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro check && astro build",
+		"preview": "astro preview",
+		"astro": "astro",
 		"format": "prettier --write ."
 	},
+	"dependencies": {
+		"@astrojs/check": "^0.9.3",
+		"accept-language-parser": "^1.5.0",
+		"astro": "^4.15.4",
+		"sass": "^1.78.0",
+		"typescript": "^5.6.2"
+	},
 	"devDependencies": {
+		"@astrojs/ts-plugin": "^1.10.2",
+		"@types/accept-language-parser": "^1.5.6",
 		"prettier": "^3.3.3",
-		"vite": "^5.4.4"
+		"prettier-plugin-astro": "^0.14.1",
+		"prettier-plugin-css-order": "^2.1.2"
 	}
 }

@@ -1,0 +1,25 @@
+---
+import { site } from '@data';
+---
+
+<ul>
+    { site.locales.map((locale) => (
+        <li>
+            <a href=`/${locale}/`>{locale}</a>
+        </li>
+    )) }
+</ul>
+
+<style lang="scss">
+    ul {
+        list-style-type: "";
+        padding: 0;
+        margin: 0;
+        display: flex;
+    }
+
+    a {
+        display: inline-block;
+        padding: 1rem
+    }
+</style>
