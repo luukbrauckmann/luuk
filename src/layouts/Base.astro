@@ -1,13 +1,14 @@
 ---
-import { LocaleSelector, ThemeSelector } from '@components';
+import { LocaleSelector } from '@components';
 import '@styles';
 import type { Locale } from '@types';
 
 interface Props {
 	locale: Locale;
+	title: string;
 }
 
-const { locale } = Astro.props;
+const { locale, title } = Astro.props;
 ---
 
 <html lang={locale}>
@@ -27,7 +28,7 @@ const { locale } = Astro.props;
 			content={Astro.generator}
 		/>
 
-		<title>Welcome • Luuk Brauckmann</title>
+		<title>{title}</title>
 
 		<link
 			rel="preload"
@@ -46,12 +47,15 @@ const { locale } = Astro.props;
 	</head>
 	<body>
 		<header>
-			<ThemeSelector />
+		  <div>
 			<LocaleSelector />
+			</div>
 		</header>
+
 		<main>
 			<slot />
 		</main>
+
 		<footer>
 			<ul class="social-links">
 				<li>
@@ -147,7 +151,7 @@ const { locale } = Astro.props;
 </html>
 
 <style>
-	header {
+	header > div {
 		display: flex;
 		justify-content: end;
 		column-gap: 1.5rem;

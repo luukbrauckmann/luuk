@@ -1,0 +1,71 @@
+---
+const {
+  alt,
+  aspectRatio,
+  base64,
+  height,
+  sizes,
+  src,
+  srcSet,
+  title,
+  width
+} = Astro.props;
+---
+
+<enhanced-image>
+    <img
+      {src}
+      srcset={srcSet}
+      {sizes}
+      {alt}
+      {title}
+      {width}
+      {height}
+      style={{
+          aspectRatio,
+          backgroundImage: `url(${base64})`
+      }}
+      loading="lazy"
+      decoding="async"
+    />
+</enhanced-image>
+
+<style>
+    enhanced-image {
+        display: contents;
+    }
+</style>
+
+<script>
+/**
+ * A custom HTML element that enhances an `<img>` element with additional behavior.
+ * Automatically removes the inline `background-image` style once the image is fully loaded.
+ */
+class EnhancedImage extends HTMLElement {
+  imgElement: HTMLImageElement;
+
+  handleImageLoad = (): void => {
+    this.imgElement.style.removeProperty('background-image');
+    this.imgElement.removeEventListener('load', this.handleImageLoad);
+  };
+
+  constructor() {
+    super();
+    this.imgElement = this.querySelector<HTMLImageElement>('img')!;
+  }
+
+  connectedCallback(): void {
+    if (this.imgElement.complete) {
+      this.handleImageLoad();
+    } else {
+      this.imgElement.addEventListener('load', this.handleImageLoad);
+    }
+  }
+
+  disconnectedCallback(): void {
+    this.imgElement.removeEventListener('load', this.handleImageLoad);
+  }
+}
+
+customElements.define('enhanced-image', EnhancedImage);
+</script>

@@ -1,5 +1,5 @@
-import './layout.scss';
-import './legacy.scss';
-import './reset.scss';
-import './theme.scss';
-import './typography.scss';
+import './layout.css';
+import './legacy.css';
+import './reset.css';
+import './theme.css';
+import './typography.css';

@@ -1,0 +1,18 @@
+#import '@components/Image/Image.fragment.graphql'
+
+query HomeQuery($locale: SiteLocale) {
+    page: home(locale: $locale) {
+        title
+        header {
+            __typename
+            ... on HeroBlockRecord {
+                id
+                subtitle
+                title
+                image {
+                    ...Image
+                }
+        }
+        }
+    }
+}

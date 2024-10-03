@@ -1,0 +1,13 @@
+---
+const { blocks } = Astro.props
+---
+
+{ blocks.map(async (block: any) => {
+  const blockName = block.__typename.replace('Record', '')
+  const Block = (await import(`./${blockName}/${blockName}.astro`)).default
+  if (Block) {
+    return (<Block {...block} />)
+  } else {
+    return (<p>{blockName}</p>)
+  }
+}) }

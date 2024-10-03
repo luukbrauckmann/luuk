@@ -1,5 +1,5 @@
 {
-	"extends": "astro/tsconfigs/strict",
+	"extends": "astro/tsconfigs/strictest",
 	"compilerOptions": {
 		"plugins": [
 			{
@@ -8,12 +8,16 @@
 		],
 		"baseUrl": ".",
 		"paths": {
+		  "@blocks": ["./src/blocks"],
+			"@blocks/*": ["./src/blocks/*"],
 			"@components": ["./src/components"],
 			"@components/*": ["./src/components/*"],
 			"@data": ["./src/data"],
 			"@data/*": ["./src/data/*"],
 			"@layouts": ["./src/layouts"],
 			"@layouts/*": ["./src/layouts/*"],
+			"@scripts": ["./src/scripts"],
+			"@scripts/*": ["./src/scripts/*"],
 			"@styles": ["./src/styles"],
 			"@styles/*": ["./src/styles/*"],
 			"@types": ["./src/types"],

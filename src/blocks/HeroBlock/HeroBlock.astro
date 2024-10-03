@@ -1,0 +1,76 @@
+---
+import { Image, DecoratedText } from '@components';
+
+const { title, subtitle, image } = Astro.props;
+---
+
+<section>
+    <div>
+        <DecoratedText>
+            <h1>{title}</h1>
+        </DecoratedText>
+        <DecoratedText>
+            <p>{subtitle}</p>
+        </DecoratedText>
+    </div>
+    <Image {...image.responsiveImage} />
+</section>
+
+<style>
+    section {
+        position: relative;
+        grid-column: full;
+        overflow: hidden;
+        margin-top: -63px;
+        height: 95dvh;
+    }
+
+    section > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        padding: 0 1rem;
+    }
+
+    h1 {
+        font-size: clamp(2rem,calc(2rem + 10vw),8rem);
+    }
+
+    section :global(img) {
+        height: calc(100% - (63px + 3rem));
+        width: auto;
+        object-fit: cover;
+        object-position: 25vw center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        mix-blend-mode: darken;
+    }
+
+    @media (min-width: 480px) {
+         section :global(img) {
+            height: calc(100% - (63px + 2rem));
+            object-position: 35vw center;
+         }
+    }
+
+    @media (min-width: 768px) {
+         section > div {
+             width: 63%;
+         }
+
+         section :global(img) {
+            height: calc(100% - (63px + 1rem));
+            object-position: unset;
+            left: 45%;
+         }
+    }
+
+    @media (min-width: 768px) {
+         section :global(img) {
+            left: 50%;
+         }
+    }
+</style>
