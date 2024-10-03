@@ -4,73 +4,58 @@ import { Image, DecoratedText } from '@components';
 const { title, subtitle, image } = Astro.props;
 ---
 
-<section>
+<section class="hero-block">
     <div>
-        <DecoratedText>
-            <h1>{title}</h1>
-        </DecoratedText>
-        <DecoratedText>
-            <p>{subtitle}</p>
-        </DecoratedText>
+        <div class="hero-block__text">
+            <DecoratedText>
+                <h1>{title}</h1>
+            </DecoratedText>
+            <DecoratedText>
+                <p>{subtitle}</p>
+            </DecoratedText>
+        </div>
+        <Image {...image.responsiveImage} />
     </div>
-    <Image {...image.responsiveImage} />
 </section>
 
 <style>
-    section {
-        position: relative;
+    .hero-block {
+        display: grid;
+        grid-template-columns: subgrid;
         grid-column: full;
         overflow: hidden;
-        margin-top: -63px;
         height: 95dvh;
+        margin-top: -3rem;
     }
 
-    section > div {
+    .hero-block > div {
+        grid-column: content;
+        position: relative;
+        container: hero-text / inline-size;
+    }
+
+    .hero-block__text {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        gap: 1rem;
         height: 100%;
-        padding: 0 1rem;
+        max-width: 500px;
     }
 
     h1 {
-        font-size: clamp(2rem,calc(2rem + 10vw),8rem);
+        font-size: clamp(4.6875rem, 2.8125rem + 9.375cqi, 7.5rem);
     }
 
-    section :global(img) {
-        height: calc(100% - (63px + 3rem));
+    .hero-block :global(img) {
+        height: calc(100% - (3rem + 6rem));
         width: auto;
         object-fit: cover;
-        object-position: 25vw center;
         position: absolute;
         bottom: 0;
-        left: 0;
+        left: clamp(20%, calc(20% + (30 * ((100% - 320px) / 480))), 50%);
         z-index: -1;
         mix-blend-mode: darken;
-    }
-
-    @media (min-width: 480px) {
-         section :global(img) {
-            height: calc(100% - (63px + 2rem));
-            object-position: 35vw center;
-         }
-    }
-
-    @media (min-width: 768px) {
-         section > div {
-             width: 63%;
-         }
-
-         section :global(img) {
-            height: calc(100% - (63px + 1rem));
-            object-position: unset;
-            left: 45%;
-         }
-    }
-
-    @media (min-width: 768px) {
-         section :global(img) {
-            left: 50%;
-         }
+        max-width: unset;
     }
 </style>

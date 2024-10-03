@@ -3,13 +3,10 @@ fragment Image on FileField {
         alt
         aspectRatio
         base64
-        bgColor
         height
         sizes
         src
         srcSet
-        title
-        webpSrcSet
         width
     }
 }
