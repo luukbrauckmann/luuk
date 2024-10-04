@@ -1,4 +1,5 @@
 ---
+import { logger } from '@scripts';
 const { blocks } = Astro.props;
 ---
 
@@ -8,8 +9,8 @@ const { blocks } = Astro.props;
 		try {
 			const Block = (await import(`./${blockName}/${blockName}.astro`)).default;
 			return <Block {...block} />;
-		} catch (e) {
-			console.error(`Block ${blockName} not found`);
+		} catch {
+			logger.warn(`Can't find './${blockName}/${blockName}.astro'`);
 			return null;
 		}
 	})
