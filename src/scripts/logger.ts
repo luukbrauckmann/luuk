@@ -14,8 +14,8 @@ export function log(message: string) {
 }
 
 export function warn(message: string) {
-	// const timestamp = getTime();
-	// console.log(`${chalk.yellow.bold(timestamp)} ${chalk.yellow('[WARN]')} ${message}`);
+	const timestamp = getTime();
+	console.log(`${chalk.yellow.bold(timestamp)} ${chalk.yellow('[WARN]')} ${message}`);
 }
 
 export function error(message: string) {
