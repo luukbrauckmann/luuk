@@ -18,5 +18,5 @@ const { page } = await datocms.get(query, { locale });
 	title={page.title}
 >
 	<Blocks blocks={[page.header]} />
-	<!-- <Blocks blocks={page.body} /> -->
+	<Blocks blocks={page.body} />
 </Base>

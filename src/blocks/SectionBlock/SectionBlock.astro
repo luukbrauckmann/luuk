@@ -5,9 +5,34 @@ const { header, content } = Astro.props;
 ---
 
 <section class="section-block">
-	<header>
-		<Blocks blocks={[header]} />
+	<div>
+		<header class="section-block__header">
+			<Blocks blocks={[header]} />
+		</header>
 
 		<Blocks blocks={content} />
-	</header>
+	</div>
 </section>
+
+<style>
+	.section-block {
+		display: grid;
+		position: relative;
+		grid-template-columns: subgrid;
+		grid-column: full;
+		background-color: var(--color-background-1);
+	}
+
+	.section-block > div {
+		grid-column: content;
+		padding-block: calc((var(--step-4) / 2) + var(--spacing-section)) var(--spacing-section);
+	}
+
+	.section-block__header {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: max-content;
+	}
+</style>

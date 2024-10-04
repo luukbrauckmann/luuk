@@ -1,3 +1,16 @@
 ---
-// const { text } = Astro.props;
+import { StructuredText } from '@datocms/astro/StructuredText';
+const { text } = Astro.props;
 ---
+
+<div class="text-block">
+	<StructuredText data={text} />
+</div>
+
+<style>
+	.text-block {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-text);
+	}
+</style>

@@ -1,17 +1,28 @@
-import { defineConfig, passthroughImageService } from 'astro/config';
+import { defineConfig } from 'astro/config';
 import cloudflare from '@astrojs/cloudflare';
 import graphql from '@rollup/plugin-graphql';
+import autoImport from 'unplugin-auto-import/vite';
 
 export default defineConfig({
 	output: 'hybrid',
-	adapter: cloudflare(),
-	image: {
-		// cloudflare is not supported by the Astro image service
-		// @see https://docs.astro.build/en/guides/images/#configure-no-op-passthrough-service
-		service: passthroughImageService()
-	},
+	adapter: cloudflare({
+		imageService: 'passthrough',
+		platformProxy: {
+			enabled: true
+		}
+	}),
 	vite: {
-		plugins: [graphql()]
+		plugins: [
+			graphql(),
+			autoImport({
+				imports: [
+					{
+						'./src/scripts/logger': ['logger']
+					}
+				],
+				dts: './src/auto-imports.d.ts'
+			})
+		]
 	},
 	devToolbar: {
 		enabled: false

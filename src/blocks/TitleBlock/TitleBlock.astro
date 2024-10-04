@@ -1,5 +1,9 @@
 ---
+import { DecoratedText } from '@components';
+
 const { title } = Astro.props;
 ---
 
-<h2>{title}</h2>
+<DecoratedText>
+	<h2>{title}</h2>
+</DecoratedText>

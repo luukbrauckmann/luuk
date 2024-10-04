@@ -2,6 +2,8 @@
 	--max-width: 75ch;
 	--spacing: 0.75rem;
 	--spacing-screen: 0.75rem;
+	--spacing-section: 2.5rem;
+	--spacing-text: 1rem;
 }
 
 @media (min-width: 768px) {

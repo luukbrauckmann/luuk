@@ -5,9 +5,11 @@ const { blocks } = Astro.props;
 {
 	blocks.map(async (block: any) => {
 		const blockName = block.__typename.replace('Record', '');
-		const Block = (await import(`./${blockName}/${blockName}.astro`)).default;
-		if (Block) {
+		try {
+			const Block = (await import(`./${blockName}/${blockName}.astro`)).default;
 			return <Block {...block} />;
+		} catch (error) {
+			logger.warn(`Can't find './${blockName}/${blockName}.astro'`);
 		}
 	})
 }

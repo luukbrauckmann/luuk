@@ -4,7 +4,7 @@
 
 footer {
 	background-color: var(--color-background-2);
-	padding-block: 1rem 0.5rem;
+	padding-block: var(--spacing-section) var(--spacing-screen);
 }
 
 .social-links {
