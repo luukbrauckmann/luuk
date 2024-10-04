@@ -5,10 +5,7 @@ import graphql from '@rollup/plugin-graphql';
 export default defineConfig({
 	output: 'hybrid',
 	adapter: cloudflare({
-		imageService: 'passthrough',
-		platformProxy: {
-			enabled: true
-		}
+		imageService: 'passthrough'
 	}),
 	vite: {
 		plugins: [graphql()]
