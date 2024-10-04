@@ -4,7 +4,7 @@ import { Image, DecoratedText } from '@components';
 const { title, subtitle, image } = Astro.props;
 ---
 
-<section class="hero-block">
+<div class="hero-block">
     <div>
         <div class="hero-block__text">
             <DecoratedText>
@@ -14,9 +14,9 @@ const { title, subtitle, image } = Astro.props;
                 <p>{subtitle}</p>
             </DecoratedText>
         </div>
-        <Image {...image.responsiveImage} />
+        <Image {...image.responsiveImage} loading="eager" />
     </div>
-</section>
+</div>
 
 <style>
     .hero-block {

@@ -1,32 +1,30 @@
 ---
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'img'> {
+  aspectRatio: string;
+  base64: string;
+  title: string;
+}
+
 const {
-  alt,
   aspectRatio,
   base64,
-  height,
-  sizes,
-  src,
-  srcSet,
-  title,
-  width
+  loading = 'lazy',
+  decoding = 'async',
+  ...props
 } = Astro.props;
 ---
 
 <enhanced-image>
     <img
-      {src}
-      srcset={srcSet}
-      {sizes}
-      {alt}
-      {title}
-      {width}
-      {height}
       style={{
           aspectRatio,
           backgroundImage: `url(${base64})`
       }}
-      loading="lazy"
-      decoding="async"
+      {loading}
+      {decoding}
+      {...props}
     />
 </enhanced-image>
 
@@ -36,9 +34,8 @@ const {
     }
 
     img {
-        background-position: center;
         background-size: cover;
-        background-repeat: no-repeat;
+        background-position: center;
     }
 </style>
 

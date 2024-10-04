@@ -7,7 +7,5 @@ const { blocks } = Astro.props
   const Block = (await import(`./${blockName}/${blockName}.astro`)).default
   if (Block) {
     return (<Block {...block} />)
-  } else {
-    return (<p>{blockName}</p>)
   }
 }) }

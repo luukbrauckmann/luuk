@@ -1,0 +1,12 @@
+---
+import { Blocks } from '@blocks';
+
+const { header, content } = Astro.props;
+---
+<section class="section-block">
+    <header>
+        <Blocks blocks={[header]}>
+    </header>
+
+    <Blocks blocks={content}>
+</section>

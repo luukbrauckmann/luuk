@@ -1,0 +1,6 @@
+pre {
+    padding: var(--spacing);
+    border-radius: 1em;
+    background: #000000;
+    color: white;
+}

@@ -1,18 +1,20 @@
-#import '@components/Image/Image.fragment.graphql'
+#import '@blocks/HeroBlock/HeroBlock.fragment.graphql'
+#import '@blocks/SectionBlock/SectionBlock.fragment.graphql'
+#import '@blocks/TextBlock/TextBlock.fragment.graphql'
+#import '@blocks/TitleBlock/TitleBlock.fragment.graphql'
 
 query HomeQuery($locale: SiteLocale) {
     page: home(locale: $locale) {
         title
         header {
             __typename
-            ... on HeroBlockRecord {
-                id
-                subtitle
-                title
-                image {
-                    ...Image
-                }
+            ...HeroBlock
         }
+        body {
+            __typename
+            ...SectionBlock
+            ...TextBlock
+            ...TitleBlock
         }
     }
 }
