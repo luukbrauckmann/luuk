@@ -1,5 +1,5 @@
 ---
-import chalk from 'chalk';
+import { logger } from '@scripts';
 const { blocks } = Astro.props;
 ---
 
@@ -10,7 +10,7 @@ const { blocks } = Astro.props;
 			const Block = (await import(`./${blockName}/${blockName}.astro`)).default;
 			return <Block {...block} />;
 		} catch {
-			console.log(`${chalk.yellow.bold('lol')} ${chalk.yellow('[WARN]')} Wut?`);
+			logger.warn(`Can't find './${blockName}/${blockName}.astro'`);
 			return null;
 		}
 	})
