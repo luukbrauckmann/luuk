@@ -1,11 +1,12 @@
 :root {
 	--max-width: 75ch;
-	--screen-padding: 0.75rem;
+	--spacing: 0.75rem;
+	--spacing-screen: 0.75rem;
 }
 
 @media (min-width: 768px) {
     :root {
-        --screen-padding: 1rem;
+        --spacing-screen: 1rem;
     }
 }
 
@@ -22,7 +23,7 @@ body > footer {
 	grid-template-columns:
 		[full-start] 1fr [content-start] minmax(0px, var(--max-width))
 		[content-end] 1fr [full-end];
-	column-gap: var(--screen-padding);
+	column-gap: var(--spacing-screen);
 }
 
 body > header > *,
