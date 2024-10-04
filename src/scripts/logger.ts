@@ -20,13 +20,13 @@ export function log(message: string) {
 export function warn(message: string) {
 	const timestamp = getTime();
 	if (isNodeEnv) {
-		console.log(`${chalk.yellow.bold(timestamp)} ${chalk.yellow('[WARN]')} ${message}`);
+		console.warn(`${chalk.yellow.bold(timestamp)} ${chalk.yellow('[WARN]')} ${message}`);
 	}
 }
 
 export function error(message: string) {
 	const timestamp = getTime();
 	if (isNodeEnv) {
-		console.log(`${chalk.red.bold(timestamp)} ${chalk.red('[ERROR]')} ${chalk.red(message)}`);
+		console.error(`${chalk.red.bold(timestamp)} ${chalk.red('[ERROR]')} ${chalk.red(message)}`);
 	}
 }

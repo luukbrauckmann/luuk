@@ -10,7 +10,7 @@ const { blocks } = Astro.props;
 			const Block = (await import(`./${blockName}/${blockName}.astro`)).default;
 			return <Block {...block} />;
 		} catch {
-			logger.warn(`Can't find './${blockName}/${blockName}.astro'`);
+			logger.error(`Can't find './${blockName}/${blockName}.astro'`);
 			return null;
 		}
 	})
