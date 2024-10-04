@@ -22,9 +22,3 @@ export function error(message: string) {
 	const timestamp = getTime();
 	console.log(`${chalk.red.bold(timestamp)} ${chalk.red('[ERROR]')} ${chalk.red(message)}`);
 }
-
-export const logger = {
-	log,
-	warn,
-	error
-};
