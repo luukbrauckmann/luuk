@@ -31,6 +31,10 @@ const params = Astro.params;
         line-height: 0;
     }
 
+    li:has(a[aria-current="true"]) {
+        display: none;
+    }
+
     a {
         display: inline-block;
         padding: var(--spacing);
