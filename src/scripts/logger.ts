@@ -14,6 +14,8 @@ export function log(message: string) {
 	const timestamp = getTime();
 	if (isNodeEnv) {
 		console.log(`${chalk.dim(timestamp)} ${chalk.blue('[user]')} ${message}`);
+	} else {
+		console.log(`${timestamp} [user] ${message}`);
 	}
 }
 
@@ -21,6 +23,8 @@ export function warn(message: string) {
 	const timestamp = getTime();
 	if (isNodeEnv) {
 		console.warn(`${chalk.yellow.bold(timestamp)} ${chalk.yellow('[WARN]')} ${message}`);
+	} else {
+		console.warn(`${timestamp} [WARN] ${message}`);
 	}
 }
 
@@ -28,5 +32,7 @@ export function error(message: string) {
 	const timestamp = getTime();
 	if (isNodeEnv) {
 		console.error(`${chalk.red.bold(timestamp)} ${chalk.red('[ERROR]')} ${chalk.red(message)}`);
+	} else {
+		console.error(`${timestamp} [ERROR] ${message}`);
 	}
 }
