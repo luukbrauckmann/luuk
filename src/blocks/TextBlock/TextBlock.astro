@@ -1,9 +1,10 @@
 ---
+import { StructuredText } from '@datocms/astro/StructuredText';
 const { text } = Astro.props;
 ---
 
 <div class="text-block">
-	<pre>{JSON.stringify(text, null, 2)}</pre>
+	<StructuredText data={text} />
 </div>
 
 <style>
