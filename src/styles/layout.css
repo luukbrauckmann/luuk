@@ -5,15 +5,15 @@
 }
 
 @media (min-width: 768px) {
-    :root {
-        --spacing-screen: 1rem;
-    }
+	:root {
+		--spacing-screen: 1rem;
+	}
 }
 
 body {
-    min-height: 100dvh;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	min-height: 100dvh;
 }
 
 body > header,

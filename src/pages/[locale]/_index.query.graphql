@@ -4,17 +4,17 @@
 #import '@blocks/TitleBlock/TitleBlock.fragment.graphql'
 
 query HomeQuery($locale: SiteLocale) {
-    page: home(locale: $locale) {
-        title
-        header {
-            __typename
-            ...HeroBlock
-        }
-        body {
-            __typename
-            ...SectionBlock
-            ...TextBlock
-            ...TitleBlock
-        }
-    }
+	page: home(locale: $locale) {
+		title
+		header {
+			__typename
+			...HeroBlock
+		}
+		body {
+			__typename
+			...SectionBlock
+			...TextBlock
+			...TitleBlock
+		}
+	}
 }

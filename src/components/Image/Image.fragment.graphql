@@ -1,15 +1,15 @@
 fragment Image on FileField {
-    responsiveImage(
-        imgixParams: {auto: format, w: 1280, fit: max}
-        sizes: "(max-width: 320px) 320px, (max-width: 640px) 640px, (max-width: 960px) 960px, (max-width: 1280px) 1280px"
-    ) {
-        alt
-        aspectRatio
-        base64
-        height
-        sizes
-        src
-        srcset: srcSet
-        width
-    }
+	responsiveImage(
+		imgixParams: { auto: format, w: 1280, fit: max }
+		sizes: "(max-width: 320px) 320px, (max-width: 640px) 640px, (max-width: 960px) 960px, (max-width: 1280px) 1280px"
+	) {
+		alt
+		aspectRatio
+		base64
+		height
+		sizes
+		src
+		srcset: srcSet
+		width
+	}
 }

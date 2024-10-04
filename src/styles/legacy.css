@@ -1,5 +1,5 @@
 :root {
-    --transition-duration: 0.15s;
+	--transition-duration: 0.15s;
 }
 
 footer {
@@ -9,30 +9,30 @@ footer {
 
 .social-links {
 	display: flex;
-	justify-content: center;
-	list-style-type: '';
-	padding: 0;
 	flex-wrap: wrap;
+	justify-content: center;
 	margin: 0;
+	padding: 0;
+	list-style-type: '';
 }
 
 .social-links__item {
 	display: inline-block;
+	transition: var(--transition-duration);
 	padding: 1rem;
 	color: var(--color-text);
-	text-decoration: none;
 	line-height: 0;
-	transition: var(--transition-duration);
+	text-decoration: none;
 }
 
 .social-links__item:hover {
-	color: var(--color-text-inverse);
 	background-color: var(--color-text);
+	color: var(--color-text-inverse);
 }
 
 .social-links__item > svg {
-	height: 1em;
 	width: 1em;
+	height: 1em;
 	fill: currentColor;
 }
 

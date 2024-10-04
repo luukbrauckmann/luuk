@@ -13,7 +13,10 @@ const { locale } = Astro.params as { locale: Locale };
 const { page } = await datocms.get(query, { locale });
 ---
 
-<Base {locale} title={page.title}>
-    <Blocks blocks={[page.header]} />
-    <!-- <Blocks blocks={page.body} /> -->
+<Base
+	{locale}
+	title={page.title}
+>
+	<Blocks blocks={[page.header]} />
+	<!-- <Blocks blocks={page.body} /> -->
 </Base>

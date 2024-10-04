@@ -2,12 +2,12 @@
 #import '@blocks/TitleBlock/TitleBlock.fragment.graphql'
 
 fragment SectionBlock on SectionBlockRecord {
-    header {
-        __typename
-        ...TitleBlock
-    }
-    content {
-        __typename
-        ...TextBlock
-    }
+	header {
+		__typename
+		...TitleBlock
+	}
+	content {
+		__typename
+		...TextBlock
+	}
 }

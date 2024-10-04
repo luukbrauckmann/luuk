@@ -47,12 +47,15 @@ const { locale, title } = Astro.props;
 	</head>
 	<body>
 		<header>
-    	   <div>
-                <a class="home-link" href="/">
-                    <Logo />
-                </a>
-                <LocaleSelector />
-           </div>
+			<div>
+				<a
+					class="home-link"
+					href="/"
+				>
+					<Logo />
+				</a>
+				<LocaleSelector />
+			</div>
 		</header>
 
 		<main>
@@ -156,15 +159,15 @@ const { locale, title } = Astro.props;
 <style>
 	header > div {
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
 		column-gap: 1.5rem;
 		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
 		z-index: 1;
-		margin-inline: calc(var(--spacing) * -1)
+		margin-inline: calc(var(--spacing) * -1);
 	}
 
 	.home-link {
-	   padding: var(--spacing);
+		padding: var(--spacing);
 	}
 </style>

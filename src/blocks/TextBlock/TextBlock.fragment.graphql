@@ -1,5 +1,5 @@
 fragment TextBlock on TextBlockRecord {
-    text {
-        value
-    }
+	text {
+		value
+	}
 }
