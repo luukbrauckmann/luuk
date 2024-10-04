@@ -1,4 +1,5 @@
 ---
+import chalk from 'chalk';
 const { blocks } = Astro.props;
 ---
 
@@ -9,6 +10,7 @@ const { blocks } = Astro.props;
 			const Block = (await import(`./${blockName}/${blockName}.astro`)).default;
 			return <Block {...block} />;
 		} catch {
+			console.log(`${chalk.yellow.bold('lol')} ${chalk.yellow('[WARN]')} Wut?`);
 			return null;
 		}
 	})
