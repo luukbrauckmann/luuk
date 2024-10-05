@@ -24,6 +24,8 @@ const { header, content } = Astro.props;
 	}
 
 	.section-block > div {
+		display: grid;
+		grid-template-columns: subgrid;
 		grid-column: content;
 		padding-block: calc((var(--step-4) / 2) + var(--spacing-section)) var(--spacing-section);
 	}
