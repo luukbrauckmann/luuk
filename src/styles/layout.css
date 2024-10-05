@@ -1,5 +1,6 @@
 :root {
-	--max-width: 75ch;
+	--max-content-width: 1440px;
+	--max-text-width: 750px;
 	--spacing: 0.75rem;
 	--spacing-screen: 0.75rem;
 	--spacing-section: 2.5rem;
@@ -23,8 +24,12 @@ body > main,
 body > footer {
 	display: grid;
 	grid-template-columns:
-		[full-start] 1fr [content-start] minmax(0px, var(--max-width))
-		[content-end] 1fr [full-end];
+		[full-start] 1fr
+		[content-start] minmax(auto, calc((100% - var(--max-text-width)) / 2))
+		[text-start] minmax(0, var(--max-text-width))
+		[text-end] minmax(auto, calc((100% - var(--max-text-width)) / 2))
+		[content-end] 1fr
+		[full-end];
 	column-gap: var(--spacing-screen);
 }
 
