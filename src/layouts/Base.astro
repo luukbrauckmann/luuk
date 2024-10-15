@@ -1,5 +1,5 @@
 ---
-import { LocaleSelector, Logo } from '@components';
+import { LocaleSelector, Logo, ThemeInitializer, ThemeSelector } from '@components';
 import '@styles';
 import type { Locale } from '@types';
 
@@ -13,6 +13,8 @@ const { locale, title } = Astro.props;
 
 <html lang={locale}>
 	<head>
+	    <ThemeInitializer />
+
 		<meta charset="utf-8" />
 		<link
 			rel="icon"
@@ -54,6 +56,8 @@ const { locale, title } = Astro.props;
 				>
 					<Logo />
 				</a>
+
+				<ThemeSelector />
 				<LocaleSelector />
 			</div>
 		</header>

@@ -53,20 +53,14 @@ const { title, subtitle, image } = Astro.props;
 	.hero-block :global(img) {
 		position: absolute;
 		bottom: 0;
-		left: clamp(20%, calc(20% + (30 * ((100% - 320px) / 480))), 50%);
-		opacity: 0.95;
+		left: 50%;
+		transform: translateX(-15%);
+		opacity: 0.5;
 		z-index: -1;
-		mix-blend-mode: darken;
+		mix-blend-mode: lighten;
 		width: auto;
 		max-width: unset;
-		height: calc(100% - (3rem + 6rem));
+		max-height: 500px;
 		object-fit: cover;
-	}
-
-	@media (prefers-color-scheme: dark) {
-		.hero-block :global(img) {
-			opacity: 0.8;
-			mix-blend-mode: lighten;
-		}
 	}
 </style>

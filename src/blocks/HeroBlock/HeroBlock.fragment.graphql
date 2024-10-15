@@ -1,4 +1,4 @@
-#import '@components/Image/Image.fragment.graphql'
+#import '@graphql/fragments/Image.fragment.graphql'
 
 fragment HeroBlock on HeroBlockRecord {
 	subtitle

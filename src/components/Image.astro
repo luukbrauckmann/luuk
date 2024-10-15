@@ -48,7 +48,7 @@ const { aspectRatio, base64, loading = 'lazy', decoding = 'async', ...props } = 
 
 		constructor() {
 			super();
-			this.imgElement = this.querySelector<HTMLImageElement>('img')!;
+			this.imgElement = this.querySelector('img')!;
 		}
 
 		connectedCallback(): void {

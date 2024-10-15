@@ -1,0 +1,35 @@
+.sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
+	position: absolute !important;
+	-webkit-clip-path: inset(50%) !important;
+	clip-path: inset(50%) !important;
+	margin: -1px !important;
+	padding: 0 !important;
+	width: 1px !important;
+	height: 1px !important;
+	overflow: hidden !important;
+	white-space: nowrap !important;
+}
+
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+	clip: auto !important;
+	-webkit-clip-path: none !important;
+	clip-path: none !important;
+	margin: auto !important;
+	width: auto !important;
+	height: auto !important;
+	overflow: visible !important;
+	white-space: normal !important;
+}
+
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	position: absolute;
+	clip-path: inset(50%);
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	white-space: nowrap;
+}
